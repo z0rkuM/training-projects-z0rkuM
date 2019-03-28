@@ -1,8 +1,10 @@
 # Sprint - W1
-> Application-structure
+
+## Application-structure
+
 Práctica para el sprint de la primera semana, correspondiente a los temas **0-Hello** y **1-Base**.
 
-## Objetivos
+### Objetivos
 
 - Crear una aplicación para gestionar proyectos.
 
@@ -12,7 +14,7 @@ Práctica para el sprint de la primera semana, correspondiente a los temas **0-H
 
 - Libre estética
 
-## Requisitos previos
+### Requisitos previos
 
 - Imprescindible: NodeJS versión 10 o superior
 
@@ -24,7 +26,7 @@ Práctica para el sprint de la primera semana, correspondiente a los temas **0-H
 
 - Recomendado Cliente GIT
 
-## Tareas
+### Tareas
 
 - [ ] use **Application** with routing
 - [ ] create **CoreModule** for layout
@@ -39,7 +41,7 @@ Práctica para el sprint de la primera semana, correspondiente a los temas **0-H
 - [ ] publish with _npm run pub_
 
 
-## Recursos
+### Recursos
 
 Para principiantes en Git:
 [Git - la guía sencilla](http://rogerdudler.github.io/git-guide/index.es.html)

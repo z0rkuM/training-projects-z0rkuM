@@ -1,8 +1,10 @@
 # Sprint - W2
-> Router-CRUD
+
+## Router-CRUD
+
 Práctica para el sprint de la segunda semana, correspondiente a los temas **2-SPA** y **3-Data**.
 
-## Objetivos
+### Objetivos
 
 - Funcionalidad básica para mantener proyectos.
 
@@ -12,12 +14,12 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **2-S
 
 - Tabla para presentación
 
-## Requisitos previos
+### Requisitos previos
 
 - Partir de la funcionalidad de la aplicación del sprint 1.
 
 
-## Tareas
+### Tareas
 
 - [ ] use _dummyData_ from **environment.ts** _see resources below_
 - [ ] create **HomeModule** with lazy loading
@@ -37,7 +39,7 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **2-S
 - [ ] Push new project in **environment**
 
 
-## Recursos
+### Recursos
 
 Usa estos datos como punto de partida.
 
