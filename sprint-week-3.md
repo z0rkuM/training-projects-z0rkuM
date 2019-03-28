@@ -1,8 +1,10 @@
 # Sprint - W3
-> Data Management
+
+## Data Management
+
 Práctica para el sprint de la segunda semana, correspondiente a los temas **4-Flow** y **5-Inject**.
 
-## Objetivos
+### Objetivos
 
 - Almacenamiento en memoria de los datos.
 
@@ -10,12 +12,12 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **4-F
 
 - Servicio inyectable común
 
-## Requisitos previos
+### Requisitos previos
 
 - Partir de la funcionalidad de la aplicación del sprint 2.
 
 
-## Tareas
+### Tareas
 
 - [ ] Create presenter component **DashboardComponent**
 - [ ] Create presenter component **FilterProjectsFormComponent**
@@ -29,6 +31,6 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **4-F
 - [ ] Perform basic _Create_ and _Read_ operations
 
 
-## Recursos
+### Recursos
 
 > Recomendación: Seguir los guiones de las lecciones 4 y 5.

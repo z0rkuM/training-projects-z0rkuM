@@ -1,8 +1,10 @@
 # Sprint - W5
-> User experience
+
+## User experience
+
 Práctica para el sprint de la segunda semana, correspondiente a los temas **8-Reactive** y **9-Material**.
 
-## Objetivos
+### Objetivos
 
 - Usar formularios reactivos
 
@@ -12,12 +14,12 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **8-R
 
 - Opcional: incorporar Material Design
 
-## Requisitos previos
+### Requisitos previos
 
 - Partir de la funcionalidad de la aplicación del sprint 2.
 
 
-## Tareas
+### Tareas
 
 - [ ] refactor forms using *ReactiveForms*
 - [ ] use an *interceptor* to audit URLs called by http
@@ -26,7 +28,7 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **8-R
 - [ ] show the last message in the *footer* of the application
 - [ ] OPTIONAL : add **Angular-Material**
 
-## Recursos
+### Recursos
 
 
 > Recomendación: Seguir los guiones de las lecciones 8 y 9.

@@ -1,8 +1,10 @@
 # Sprint - W4
-> Data Management
+
+## Data Management
+
 Práctica para el sprint de la segunda semana, correspondiente a los temas **6-Flow** y **7-Inject**.
 
-## Objetivos
+### Objetivos
 
 - Comunicación con servidor REST.
 
@@ -10,12 +12,12 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **6-F
 
 - Obtención mediante GET
 
-## Requisitos previos
+### Requisitos previos
 
 - Partir de la funcionalidad de la aplicación del sprint 2.
 
 
-## Tareas
+### Tareas
 
 - [ ] import _HttpClientModule_
 - [ ] Make *ProjectsService* dependent on _HttpClient_
@@ -24,7 +26,7 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **6-F
 - [ ] **get** list of projects
 
 
-## Recursos
+### Recursos
 
 - [public API for projects]('https://api-base.herokuapp.com/api/pub/projects')
 - Memory only service
