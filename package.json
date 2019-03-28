@@ -1,13 +1,17 @@
 {
   "name": "training-projects",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build:prod": "ng build --prod",
+    "build:pub": "ng build --prod --output-path docs --base-href https://trainingit-introangular-ed2.github.io/training-projects/",
+    "e2e": "ng e2e",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "ng",
+    "pub": "npm run build:pub && npm run push",
+    "push": "git add * && git commit -m 'pub' && git push",
+    "start:prod": "npm run build:prod && npm run http-server",
+    "start": "ng serve -o --port 4279",
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

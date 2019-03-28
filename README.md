@@ -1,27 +1,9 @@
-# TrainingProjects
+# Práctica para curso de introducción a Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+## TrainingProjects
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [Sprint W1 - Application structure]('./sprint-week-1.md)
+- [Sprint W2 - Routes and layout]('./sprint-week-2.md)
+- [Sprint W3 - Data Management]('./sprint-week-3.md)
+- [Sprint W4 - Http communications]('./sprint-week-4.md)
+- [Sprint W5 - User experience]('./sprint-week-5.md)
