@@ -46,4 +46,12 @@ Práctica para el sprint de la primera semana, correspondiente a los temas **0-H
 Para principiantes en Git:
 [Git - la guía sencilla](http://rogerdudler.github.io/git-guide/index.es.html)
 
+#### OPCIONAL
+
+Para desplegar la aplicación y verla en gitHub:
+
+1- [Configuring a publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
+
+2 - Ajustar url en _"build:pub"_ script del _packcage.json_
+
 > Recomendación: Seguir los guiones de las lecciones 0 y 1.
