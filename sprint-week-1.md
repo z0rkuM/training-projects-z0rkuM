@@ -52,6 +52,6 @@ Para desplegar la aplicación y verla en gitHub:
 
 1- [Configuring a publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch)
 
-2 - Ajustar url en _"build:pub"_ script del _packcage.json_
+2 - Ajustar url en _"build:pub"_ script del _package.json_
 
 > Recomendación: Seguir los guiones de las lecciones 0 y 1.
