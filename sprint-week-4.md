@@ -29,6 +29,9 @@ Práctica para el sprint de la segunda semana, correspondiente a los temas **6-F
 ### Recursos
 
 - [public API for projects]('https://api-base.herokuapp.com/api/pub/projects')
+- Its a **shared non secured** server
+- Every user sees each other data
+- Don't store sensitive data
 - Memory only service
 - Data removed every 30 minutes
 
