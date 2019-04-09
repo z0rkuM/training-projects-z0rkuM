@@ -1,3 +1,11 @@
-<h2>
-  Gestoro
-</h2>
+<header class="sticky">
+  <a routerLink="/"
+     class="logo"><span class="icon-calendar"></span> Gestoro</a>
+  <a routerLink="/"
+     routerLinkActive="header-link-active"
+     [routerLinkActiveOptions]="{exact: true}"
+     class="button">Home</a>
+  <a routerLink="projects"
+     routerLinkActive="header-link-active"
+     class="button">Proyectos</a>
+</header>

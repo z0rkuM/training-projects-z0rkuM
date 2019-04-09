@@ -1,0 +1,36 @@
+<form>
+  <fieldset>
+    <legend>{{project.name}}</legend>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 responsive-label">
+        <label for="id">Identificador</label>
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <input type="text"
+               id="id"
+               name="id"
+               placeholder="Identificador"
+               style="width: 100%"
+               value="{{project.id}}"
+               readonly />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 responsive-label">
+        <label for="name">Nombre</label>
+      </div>
+      <div class="col-sm-12 col-md-9">
+        <input type="text"
+               id="name"
+               name="name"
+               placeholder="Nombre"
+               style="width: 100%"
+               value="{{project.name}}"
+               readonly />
+      </div>
+    </div>
+  </fieldset>
+</form>
+
+<a routerLink="/projects"
+   class="button"><span class="icon-link"></span> Volver</a>

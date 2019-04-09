@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Identificador</th>
+      <th>Nombre</th>
+      <th>Editar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of projects">
+      <td data-label="Identificador">{{p.id}}</td>
+      <td data-label="Nombre">{{p.name}}</td>
+      <td data-label="Editar"><a [routerLink]="p.id"><span class="icon-edit"></span></a></td>
+    </tr>
+  </tbody>
+</table>
