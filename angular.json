@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "training-projects": {
+    "gestoro": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/training-projects",
+            "outputPath": "dist/gestoro",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "training-projects:build"
+            "browserTarget": "gestoro:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "training-projects:build:production"
+              "browserTarget": "gestoro:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "training-projects:build"
+            "browserTarget": "gestoro:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "training-projects-e2e": {
+    "gestoro-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "training-projects:serve"
+            "devServerTarget": "gestoro:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "training-projects:serve:production"
+              "devServerTarget": "gestoro:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "training-projects"
+  "defaultProject": "gestoro"
 }
