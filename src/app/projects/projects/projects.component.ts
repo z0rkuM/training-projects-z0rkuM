@@ -15,6 +15,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   deleteProject(deletedId: number) {
-    environment.projects.splice(environment.projects.findIndex(p => p.id == deletedId), 1);
+    environment.projects.splice(environment.projects.findIndex(p => p.id === deletedId), 1);
   }
 }

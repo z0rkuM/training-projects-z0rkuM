@@ -13,10 +13,10 @@ export class ViewerProjectComponent implements OnInit {
   project: Project;
 
   constructor(activateRoute: ActivatedRoute) {
-    this.projectId = activateRoute.snapshot.params['id'];
+    this.projectId = +activateRoute.snapshot.params['id'];
   }
 
   ngOnInit() {
-    this.project = environment.projects.find(p => p.id == this.projectId);
+    this.project = environment.projects.find(p => p.id === this.projectId);
   }
 }
