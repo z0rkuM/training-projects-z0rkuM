@@ -1,10 +1,12 @@
 <ng-template #links>
   <a routerLink="home"
      routerLinkActive="header-link-active"
-     class="button">Home</a>
+     class="button"
+     (click)="drawerControl.checked = false">Home</a>
   <a routerLink="projects"
      routerLinkActive="header-link-active"
-     class="button">Proyectos</a>
+     class="button"
+     (click)="drawerControl.checked = false">Proyectos</a>
 </ng-template>
 
 <header class="sticky hidden-sm">
@@ -20,7 +22,8 @@
      class="logo">Gestoro</a>
   <input type="checkbox"
          id="drawer-control"
-         class="drawer hidden-md hidden-lg">
+         class="drawer hidden-md hidden-lg"
+         #drawerControl>
   <div>
     <label for="drawer-control"
            class="drawer-close"></label>
