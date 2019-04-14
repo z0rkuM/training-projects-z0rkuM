@@ -1,7 +1,7 @@
 <div class="text-center"
      *ngIf="numProj > 0; else zeroProj">
   <p>
-    Actualmente gestionamos <mark class="tag primary">{{numProj}}</mark> proyectos en Gestoro.
+    Actualmente gestionamos <mark class="tag primary">{{numProj}}</mark> proyecto{{numProj > 1?'s':''}} en Gestoro.
   </p>
   <button routerLink="/projects"
           class="shadowed"><span class="icon-search"></span> Explorar</button>
