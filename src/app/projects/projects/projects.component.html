@@ -13,10 +13,10 @@
       <td data-label="Nombre">{{p.name}}</td>
       <td data-label="Opciones"
           class="table-options">
-        <a class="table-option tooltip"
+        <a class="table-option"
            aria-label="Visualiza este proyecto"
            [routerLink]="p.id"><i class="fas fa-eye"></i> </a>
-        <a class="table-option tooltip"
+        <a class="table-option"
            aria-label="Borra este proyecto"
            href="javascript:void(0)"
            (click)="deleteProject(p.id)"><i class="fas fa-times"></i> </a>
