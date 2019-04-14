@@ -24,9 +24,11 @@
          id="drawer-control"
          class="drawer hidden-md hidden-lg"
          #drawerControl>
-  <div>
-    <label for="drawer-control"
-           class="drawer-close"></label>
+  <div class="responsive-control">
+    <div class="drawer-close-container">
+      <label for="drawer-control"
+             class="drawer-close"></label>
+    </div>
     <ng-template [ngTemplateOutlet]="links"></ng-template>
   </div>
 </header>

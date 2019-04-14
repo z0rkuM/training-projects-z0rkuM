@@ -7,6 +7,15 @@
   --header-back-color: var(--button-hover-back-color);
 }
 
+.responsive-control .button {
+  display: block;
+}
+
+.responsive-control .drawer-close-container {
+  height: calc(2rem + 4*var(--universal-margin));
+}
+
+
 /* Control de tablas */
 table:not(.horizontal) td.table-options {
   overflow: visible;
