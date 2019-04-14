@@ -1,32 +1,20 @@
 <form>
   <fieldset>
-    <legend>{{project.name}}</legend>
+    <legend>{{project.name | uppercase}}</legend>
     <div class="row">
-      <div class="col-sm-12 col-md-3 responsive-label">
-        <label for="id">Identificador</label>
+      <div class="col-sm-12 col-md-3">
+        <b>Identificador</b>
       </div>
       <div class="col-sm-12 col-md-9">
-        <input type="text"
-               id="id"
-               name="id"
-               placeholder="Identificador"
-               style="width: 100%"
-               value="{{project.id}}"
-               readonly />
+        {{project.id}}
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-3 responsive-label">
-        <label for="name">Nombre</label>
+      <div class="col-sm-12 col-md-3">
+        <b>Nombre</b>
       </div>
       <div class="col-sm-12 col-md-9">
-        <input type="text"
-               id="name"
-               name="name"
-               placeholder="Nombre"
-               style="width: 100%"
-               value="{{project.name}}"
-               readonly />
+        {{project.name}}
       </div>
     </div>
   </fieldset>

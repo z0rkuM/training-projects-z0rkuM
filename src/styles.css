@@ -1,11 +1,31 @@
 :root {
-  --header-hover-back-color: #dbdbdb;
+  --header-hover-back-color: var(--button-hover-back-color);
 }
 
+/* Personalización de la cabecera */
+.header-link-active {
+  --header-back-color: var(--button-hover-back-color);
+}
+
+/* Control de tablas */
+table:not(.horizontal) td.table-options {
+  overflow: visible;
+}
+
+.table-option {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+/* Utilidades */
 .text-center {
   text-align: center;
 }
 
-.header-link-active {
-  --header-back-color: #dbdbdb;
+.margin-top {
+  margin-top: var(--universal-margin);
+}
+
+a:link {
+  color: var(--a-visited-color);
 }

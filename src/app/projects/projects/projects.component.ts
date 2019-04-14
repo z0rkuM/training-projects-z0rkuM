@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-projects',
@@ -12,5 +12,9 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit() {
     this.projects = environment.projects;
+  }
+
+  deleteProject(deletedId: number) {
+    environment.projects.splice(environment.projects.findIndex(p => p.id == deletedId), 1);
   }
 }

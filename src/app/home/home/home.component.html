@@ -1,6 +1,17 @@
-<div class="text-center">
-  Número de proyectos en Gestoro: {{numProj}}.
-  <br />
-  <button routerLink="projects"
-          class="primary shadowed">Explorar</button>
+<div class="text-center"
+     *ngIf="numProj > 0; else zeroProj">
+  <p>
+    Actualmente gestionamos <mark class="tag primary">{{numProj}}</mark> proyectos en Gestoro.
+  </p>
+  <button routerLink="/projects"
+          class="shadowed"><span class="icon-search"></span> Explorar</button>
 </div>
+<ng-template #zeroProj>
+  <div class="text-center">
+    <p>
+      No tenemos proyectos en Gestoro, se el primero en crear uno.
+    </p>
+    <button routerLink="/projects/new"
+            class="shadowed"><span class="fas fa-calendar-plus"></span> Crear mi proyecto</button>
+  </div>
+</ng-template>
