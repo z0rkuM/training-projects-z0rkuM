@@ -1,10 +1,29 @@
-<header class="sticky">
-  <a routerLink="/"
-     class="logo"><span class="icon-calendar"></span> Gestoro</a>
+<ng-template #links>
   <a routerLink="home"
      routerLinkActive="header-link-active"
      class="button">Home</a>
   <a routerLink="projects"
      routerLinkActive="header-link-active"
      class="button">Proyectos</a>
+</ng-template>
+
+<header class="sticky hidden-sm">
+  <a routerLink="/"
+     class="logo"><span class="icon-calendar"></span> Gestoro</a>
+  <ng-template [ngTemplateOutlet]="links"></ng-template>
+</header>
+
+<header class="hidden-md hidden-lg">
+  <label for="drawer-control"
+         class="drawer-toggle hidden-md hidden-lg"></label>
+  <a routerLink="/"
+     class="logo">Gestoro</a>
+  <input type="checkbox"
+         id="drawer-control"
+         class="drawer hidden-md hidden-lg">
+  <div>
+    <label for="drawer-control"
+           class="drawer-close"></label>
+    <ng-template [ngTemplateOutlet]="links"></ng-template>
+  </div>
 </header>
