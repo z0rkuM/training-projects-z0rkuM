@@ -1,11 +1,11 @@
-<div class="text-center"
-     *ngIf="numProj > 0; else zeroProj">
-  <p>
-    Actualmente gestionamos <mark class="tag primary">{{numProj}}</mark> proyecto{{numProj > 1?'s':''}} en Gestoro.
-  </p>
-  <button routerLink="/projects"
-          class="shadowed"><span class="icon-search"></span> Explorar</button>
-</div>
+<ng-container *ngIf="numProj > 0; else zeroProj">
+  <h4>Últimos proyectos</h4>
+  <app-dashboard [projects]="projects.reverse()"
+                 [long]="false"
+                 [buttonLabel]="'Ver proyecto'"
+                 (buttonClick)="visitProject($event)"></app-dashboard>
+</ng-container>
+
 <ng-template #zeroProj>
   <div class="text-center">
     <p>

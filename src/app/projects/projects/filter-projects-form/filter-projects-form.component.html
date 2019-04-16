@@ -1,0 +1,32 @@
+<form>
+  <div class="row">
+    <div class="col-sm-12 col-md-8">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="input-group vertical">
+            <label for="id">Identificador</label>
+            <input name="id"
+                   id="id"
+                   type="number"
+                   [(ngModel)]="model.id">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="input-group vertical">
+            <label for="name">Nombre</label>
+            <input name="name"
+                   id="name"
+                   type="text"
+                   [(ngModel)]="model.name">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 text-center">
+      <a class="button primary"
+         (click)="doSearch()"><i class="fas fa-search"></i> Buscar</a>
+      <a class="button"
+         (click)="clean()">Limpiar</a>
+    </div>
+  </div>
+</form>

@@ -31,6 +31,10 @@ table:not(.horizontal) td.table-options {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .margin-top {
   margin-top: var(--universal-margin);
 }

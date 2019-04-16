@@ -1,0 +1,25 @@
+<div class="card fluid">
+  <div class="section dark">
+    <h5>{{project.name | uppercase}}</h5>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <b>Id.</b>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        {{project.id}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <b>Nombre</b>
+      </div>
+      <div class="col-sm-12 col-md-8">
+        {{project.name}}
+      </div>
+    </div>
+    <div class="row">
+      <a (click)="buttonClick.emit(project.id)"
+         class="button primary">{{buttonLabel}}</a>
+    </div>
+  </div>
+</div>

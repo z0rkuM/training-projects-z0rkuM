@@ -1,3 +1,8 @@
+<h4>Listado de proyectos</h4>
+
+<app-filter-projects-form [(model)]="filter"
+                          (search)="doSearch()"></app-filter-projects-form>
+
 <table class="striped margin-top"
        *ngIf="projects.length > 0; else emptyMsg">
   <thead>
@@ -26,7 +31,7 @@
 </table>
 <ng-template #emptyMsg>
   <p class="text-center">
-    No tenemos proyectos en Gestoro, se el primero en crear uno.
+    {{emptyDB ? 'No tenemos proyectos en Gestoro, se el primero en crear uno.' : 'La búsqueda no devolvió ningún resultado.'}}
   </p>
 </ng-template>
 <div [ngClass]="{'text-center': projects.length == 0}">

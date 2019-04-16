@@ -1,0 +1,20 @@
+<div class="row">
+  <ng-container *ngFor="let p of projects; index as i">
+    <div class="col-sm-12 col-md-4"
+         *ngIf="i < max">
+      <app-dashboard-element [buttonLabel]="buttonLabel"
+                             (buttonClick)="buttonClick.emit($event)"
+                             [project]="p"></app-dashboard-element>
+    </div>
+  </ng-container>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 text-right">
+    <p>
+      Se muestran <mark class="tag primary">{{min(projects.length, max)}}</mark> proyectos (de {{projects.length}}
+      en
+      total)
+    </p>
+  </div>
+</div>
