@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { Project } from './models/project.model';
 
@@ -12,7 +13,7 @@ export class ProjectsComponent implements OnInit {
   emptyDB: boolean;
   filter: Project;
 
-  constructor() {
+  constructor(private router: Router) {
     this.filter = { id: null, name: '' };
   }
 
@@ -29,6 +30,9 @@ export class ProjectsComponent implements OnInit {
     environment.projects.splice(environment.projects.findIndex(p => p.id === deletedId), 1);
     this.isEmptyDB();
     this.doSearch(); // Para mantener estado de la tabla
+  }
+  visitProject(visitedId: number) {
+    this.router.navigateByUrl('/projects/' + visitedId);
   }
 
   doSearch() {

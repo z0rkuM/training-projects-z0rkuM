@@ -8,9 +8,10 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ViewerProjectComponent } from './projects/viewer-project/viewer-project.component';
 import { DashboardElementComponent } from './projects/dashboard/dashboard-element/dashboard-element.component';
 import { FilterProjectsFormComponent } from './projects/filter-projects-form/filter-projects-form.component';
+import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
 
 @NgModule({
-  declarations: [ProjectsComponent, ViewerProjectComponent, NewProjectComponent, DashboardComponent, DashboardElementComponent, FilterProjectsFormComponent],
+  declarations: [ProjectsComponent, ViewerProjectComponent, NewProjectComponent, DashboardComponent, DashboardElementComponent, FilterProjectsFormComponent, ProjectsListComponent],
   imports: [CommonModule, ProjectsRoutingModule, FormsModule],
   exports: [DashboardComponent]
 })

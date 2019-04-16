@@ -1,39 +1,18 @@
-<h4>Listado de proyectos</h4>
+<ng-container *ngIf="!emptyDB; else emptyDBMsg">
+  <h4>Listado de proyectos</h4>
+  <app-filter-projects-form [(model)]="filter"
+                            (search)="doSearch()"></app-filter-projects-form>
+  <app-projects-list [projects]="projects"
+                     (visit)="visitProject($event.id)"
+                     (delete)="deleteProject($event.id)"></app-projects-list>
+</ng-container>
 
-<app-filter-projects-form [(model)]="filter"
-                          (search)="doSearch()"></app-filter-projects-form>
-
-<table class="striped margin-top"
-       *ngIf="projects.length > 0; else emptyMsg">
-  <thead>
-    <tr>
-      <th>Identificador</th>
-      <th>Nombre</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of projects">
-      <td data-label="Identificador">{{p.id}}</td>
-      <td data-label="Nombre">{{p.name}}</td>
-      <td data-label="Opciones"
-          class="table-options">
-        <a class="table-option"
-           aria-label="Visualiza este proyecto"
-           [routerLink]="p.id"><i class="fas fa-eye"></i> </a>
-        <a class="table-option"
-           aria-label="Borra este proyecto"
-           href="javascript:void(0)"
-           (click)="deleteProject(p.id)"><i class="fas fa-times"></i> </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<ng-template #emptyMsg>
+<ng-template #emptyDBMsg>
   <p class="text-center">
-    {{emptyDB ? 'No tenemos proyectos en Gestoro, se el primero en crear uno.' : 'La búsqueda no devolvió ningún resultado.'}}
+    No tenemos proyectos en Gestoro, se el primero en crear uno.
   </p>
 </ng-template>
+
 <div [ngClass]="{'text-center': projects.length == 0}">
   <button routerLink="new"
           class="primary"><span class="fas fa-calendar-plus"></span> Nuevo proyecto</button>
