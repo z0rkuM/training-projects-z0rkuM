@@ -3,8 +3,7 @@ import { Project } from '../models/project.model';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
   static LONG = 6;
@@ -20,10 +19,11 @@ export class DashboardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Con "long" dashboard mostramos 6 proyectos, si no mostramos 3
     this.max = this.long ? DashboardComponent.LONG : DashboardComponent.SHORT;
   }
 
-  public min(a, b) {
+  public min(a: number, b: number) {
     return a < b ? a : b;
   }
 }

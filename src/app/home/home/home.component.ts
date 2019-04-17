@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { ProjectsService } from '../../projects/projects.service';
 import { Project } from '../../projects/projects/models/project.model';
 
 @Component({
@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit {
   numProj: number;
   projects: Project[];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private projectsService: ProjectsService) {}
 
   ngOnInit() {
-    this.numProj = environment.projects.length;
-    this.projects = environment.projects;
+    this.projects = this.projectsService.findAll();
+    this.numProj = this.projects.length;
   }
 
   visitProject(id: number) {

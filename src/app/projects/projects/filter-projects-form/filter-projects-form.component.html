@@ -22,11 +22,11 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-4 text-center">
+    <div class="col-sm-12 col-md-4 filter-projects-form-buttons">
       <a class="button primary"
-         (click)="doSearch()"><i class="fas fa-search"></i> Buscar</a>
+         (click)="search.emit(true)"><i class="fas fa-search"></i> Buscar</a>
       <a class="button"
-         (click)="clean()">Limpiar</a>
+         (click)="search.emit(false)">Limpiar</a>
     </div>
   </div>
 </form>

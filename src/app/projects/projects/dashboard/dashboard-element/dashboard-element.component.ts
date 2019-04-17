@@ -3,8 +3,7 @@ import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-dashboard-element',
-  templateUrl: './dashboard-element.component.html',
-  styleUrls: ['./dashboard-element.component.css']
+  templateUrl: './dashboard-element.component.html'
 })
 export class DashboardElementComponent implements OnInit {
   @Input() buttonLabel: string;

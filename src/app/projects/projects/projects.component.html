@@ -1,7 +1,7 @@
 <ng-container *ngIf="!emptyDB; else emptyDBMsg">
   <h4>Listado de proyectos</h4>
   <app-filter-projects-form [(model)]="filter"
-                            (search)="doSearch()"></app-filter-projects-form>
+                            (search)="search($event)"></app-filter-projects-form>
   <app-projects-list [projects]="projects"
                      (visit)="visitProject($event.id)"
                      (delete)="deleteProject($event.id)"></app-projects-list>

@@ -1,45 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { ProjectsService } from '../projects.service';
 import { Project } from './models/project.model';
 
+/**
+ * Contenedor para la pantalla de proyectos.
+ */
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects: any[];
+  projects: Project[];
   emptyDB: boolean;
   filter: Project;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private projectsService: ProjectsService) {
     this.filter = { id: null, name: '' };
   }
 
   ngOnInit() {
-    this.projects = environment.projects;
-    this.isEmptyDB();
+    this.projects = this.projectsService.findAll();
+    this.emptyDB = this.projects.length === 0;
   }
 
-  private isEmptyDB() {
-    this.emptyDB = environment.projects.length === 0;
-  }
-
+  /**
+   * Borrado de un Project.
+   * @param deletedId Identificador del proyecto para borrar.
+   */
   deleteProject(deletedId: number) {
-    environment.projects.splice(environment.projects.findIndex(p => p.id === deletedId), 1);
-    this.isEmptyDB();
-    this.doSearch(); // Para mantener estado de la tabla
+    this.projectsService.delete(deletedId);
+    this.emptyDB = this.projectsService.findAll().length === 0;
+    this.search(true); // Para mantener estado de la tabla
   }
+
+  /**
+   * Redirige a la pantalla de visualizar proyecto.
+   * @param visitedId Identificador del proyecto a visualizar.
+   */
   visitProject(visitedId: number) {
     this.router.navigateByUrl('/projects/' + visitedId);
   }
 
-  doSearch() {
-    this.projects = environment.projects.filter(
-      p =>
-        (this.filter.id == null || this.filter.id === p.id) &&
-        (this.filter.name === '' || p.name.toLowerCase().indexOf(this.filter.name.toLowerCase()) !== -1)
-    );
+  /**
+   * Reseteo del filtro de búsqueda.
+   */
+  private cleanFilter() {
+    this.filter.id = null;
+    this.filter.name = '';
+  }
+
+  /**
+   * Realiza la búsqueda de proyectos cuando recibe true, si recibe false resetea la búsqueda.
+   * @param doSearch Flag para decidir si se busca o se resetea.
+   */
+  search(doSearch: boolean) {
+    if (!doSearch) {
+      this.cleanFilter();
+    }
+    this.projects = this.projectsService.filter(this.filter);
   }
 }

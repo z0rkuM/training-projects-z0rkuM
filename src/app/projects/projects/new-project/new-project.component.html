@@ -1,17 +1,6 @@
-<form>
-  <fieldset>
-    <legend>Nuevo proyecto</legend>
-    <section class="input-group fluid">
-      <label for="name">Nombre</label>
-      <input name="name"
-             type="text"
-             [(ngModel)]="project.name"
-             placeholder="Nombre del proyecto" />
-    </section>
-  </fieldset>
-</form>
+<app-new-project-form [(model)]="project"></app-new-project-form>
 
-<a routerLink="/projects"
+<a (click)="location.back()"
    class="button"><span class="icon-link"></span> Volver</a>
 <a (click)="addProject()"
    class="button primary"><span class="fas fa-calendar-plus"></span> Guardar</a>

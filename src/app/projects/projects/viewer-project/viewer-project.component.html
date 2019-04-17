@@ -1,24 +1,5 @@
-<form>
-  <fieldset>
-    <legend>{{project.name | uppercase}}</legend>
-    <div class="row">
-      <div class="col-sm-12 col-md-3">
-        <b>Identificador</b>
-      </div>
-      <div class="col-sm-12 col-md-9">
-        {{project.id}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-3">
-        <b>Nombre</b>
-      </div>
-      <div class="col-sm-12 col-md-9">
-        {{project.name}}
-      </div>
-    </div>
-  </fieldset>
-</form>
+<app-viewer-project-form [model]="project"
+                         [toUppercase]="true"></app-viewer-project-form>
 
-<a routerLink="/projects"
+<a (click)="location.back()"
    class="button"><span class="icon-link"></span> Volver</a>

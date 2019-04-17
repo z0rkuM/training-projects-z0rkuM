@@ -1,6 +1,7 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from '../../../../environments/environment';
+import { ProjectsService } from '../../projects.service';
 import { Project } from '../models/project.model';
 
 @Component({
@@ -11,21 +12,14 @@ import { Project } from '../models/project.model';
 export class NewProjectComponent implements OnInit {
   public project: Project;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public location: Location, private projectsService: ProjectsService) {
     this.project = { id: null, name: '' };
   }
 
   ngOnInit() {}
 
   addProject() {
-    this.project.id = this.getNextId();
-    environment.projects.push({ ...this.project });
+    this.projectsService.add(this.project);
     this.router.navigateByUrl('/projects');
-  }
-
-  private getNextId(): number {
-    let max = -1;
-    environment.projects.forEach(p => (max = max < p.id ? p.id : max));
-    return max + 1;
   }
 }

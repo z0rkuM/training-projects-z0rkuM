@@ -1,0 +1,8 @@
+.filter-projects-form-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.filter-projects-form-buttons a {
+  align-self: center;
+}
