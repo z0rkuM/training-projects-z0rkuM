@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
-import { IProjectsService } from './projects-service.interface';
+import { ProjectsService } from './projects.service';
 import { Project } from './projects/models/project.model';
 
 @Injectable()
-export class EnviromentProjectsService implements IProjectsService {
+export class EnviromentProjectsService implements ProjectsService {
+  static INDEX_NOT_FOUND = -1;
   findAll() {
     return environment.projects;
   }
@@ -32,7 +33,8 @@ export class EnviromentProjectsService implements IProjectsService {
   private constructFilter(filter: Project) {
     return (p: Project) =>
       (filter.id == null || filter.id === p.id) &&
-      (filter.name === '' || p.name.toLowerCase().indexOf(filter.name.toLowerCase()) !== -1);
+      (filter.name === '' ||
+        p.name.toLowerCase().indexOf(filter.name.toLowerCase()) !== EnviromentProjectsService.INDEX_NOT_FOUND);
   }
   constructor() {}
 }
