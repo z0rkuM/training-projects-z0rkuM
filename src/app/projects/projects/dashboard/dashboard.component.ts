@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
 
   @Input() long: boolean;
   @Input() buttonLabel: string;
+  @Input() dashboardTitle: string;
   @Input() projects: Project[];
   @Output() buttonClick = new EventEmitter<number>();
 

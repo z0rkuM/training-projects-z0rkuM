@@ -1,17 +1,11 @@
-<ng-container *ngIf="numProj > 0; else zeroProj">
-  <h4>Últimos proyectos</h4>
-  <app-dashboard [projects]="projects.reverse()"
-                 [long]="false"
-                 [buttonLabel]="'Ver proyecto'"
-                 (buttonClick)="visitProject($event)"></app-dashboard>
-</ng-container>
+<app-dashboard [projects]="projects.reverse()"
+               [long]="false"
+               [buttonLabel]="'Ver proyecto'"
+               (buttonClick)="visitProject($event)"
+               dashboardTitle="Últimos proyectos"></app-dashboard>
 
-<ng-template #zeroProj>
-  <div class="text-center">
-    <p>
-      No tenemos proyectos en Gestoro, se el primero en crear uno.
-    </p>
-    <button routerLink="/projects/new"
-            class="shadowed"><span class="fas fa-calendar-plus"></span> Crear mi proyecto</button>
-  </div>
-</ng-template>
+<div class="text-center"
+     *ngIf="numProj == 0">
+  <button routerLink="/projects/new"
+          class="shadowed"><span class="fas fa-calendar-plus"></span> Crear mi proyecto</button>
+</div>

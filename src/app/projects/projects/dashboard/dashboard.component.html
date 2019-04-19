@@ -1,20 +1,32 @@
-<div class="row">
-  <ng-container *ngFor="let p of projects; index as i">
-    <div class="col-sm-12 col-md-4"
-         *ngIf="i < max">
-      <app-dashboard-element [buttonLabel]="buttonLabel"
-                             (buttonClick)="buttonClick.emit($event)"
-                             [project]="p"></app-dashboard-element>
-    </div>
-  </ng-container>
-</div>
+<ng-container *ngIf="projects.length > 0; else zeroProj">
+  <h4>{{dashboardTitle}}</h4>
 
-<div class="row">
-  <div class="col-sm-12 text-right">
+  <div class="row">
+    <ng-container *ngFor="let p of projects; index as i">
+      <div class="col-sm-12 col-md-4"
+           *ngIf="i < max">
+        <app-dashboard-element [buttonLabel]="buttonLabel"
+                               (buttonClick)="buttonClick.emit($event)"
+                               [project]="p"></app-dashboard-element>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 text-right">
+      <p>
+        Se muestran <mark class="tag primary">{{min(projects.length, max)}}</mark> proyectos (de {{projects.length}}
+        en
+        total)
+      </p>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #zeroProj>
+  <div class="text-center">
     <p>
-      Se muestran <mark class="tag primary">{{min(projects.length, max)}}</mark> proyectos (de {{projects.length}}
-      en
-      total)
+      No tenemos proyectos en Gestoro, se el primero en crear uno.
     </p>
   </div>
-</div>
+</ng-template>
