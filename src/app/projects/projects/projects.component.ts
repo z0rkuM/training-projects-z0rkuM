@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { finalize, share } from 'rxjs/operators';
 import { ProjectsService } from '../projects.service';
 import { Project } from './models/project.model';
 
@@ -12,17 +14,20 @@ import { Project } from './models/project.model';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-  projects: Project[];
-  emptyDB: boolean;
+  projects$: Observable<Project[]>;
   filter: Project;
+  loading: boolean;
 
   constructor(private router: Router, private projectsService: ProjectsService) {
     this.filter = { id: null, name: '' };
+    this.loading = true;
   }
 
   ngOnInit() {
-    this.projects = this.projectsService.findAll();
-    this.emptyDB = this.projects.length === 0;
+    this.projects$ = this.projectsService.findAll().pipe(
+      share(),
+      finalize(() => (this.loading = false))
+    );
   }
 
   /**
@@ -30,9 +35,9 @@ export class ProjectsComponent implements OnInit {
    * @param deletedId Identificador del proyecto para borrar.
    */
   deleteProject(deletedId: number) {
-    this.projectsService.delete(deletedId);
-    this.emptyDB = this.projectsService.findAll().length === 0;
-    this.search(true); // Para mantener estado de la tabla
+    this.projectsService.delete(deletedId).subscribe(_ => {
+      this.search(true); // Para mantener estado de la tabla
+    });
   }
 
   /**
@@ -56,9 +61,13 @@ export class ProjectsComponent implements OnInit {
    * @param doSearch Flag para decidir si se busca o se resetea.
    */
   search(doSearch: boolean) {
+    this.loading = true;
     if (!doSearch) {
       this.cleanFilter();
     }
-    this.projects = this.projectsService.filter(this.filter);
+    this.projects$ = this.projectsService.filter(this.filter).pipe(
+      share(),
+      finalize(() => (this.loading = false))
+    );
   }
 }

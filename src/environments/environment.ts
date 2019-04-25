@@ -7,5 +7,9 @@ export const environment = {
     { id: 2, name: 'Travel around the world' },
     { id: 3, name: 'Clean my room' }
   ],
-  enviromentLabel: 'DEV'
+  enviromentLabel: 'DEV',
+  projectsApi: {
+    url: 'https://api-base.herokuapp.com/api/pub/projects',
+    delay: 500
+  }
 };

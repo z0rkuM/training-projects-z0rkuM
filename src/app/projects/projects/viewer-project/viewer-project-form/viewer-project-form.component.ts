@@ -8,6 +8,7 @@ import { Project } from '../../models/project.model';
 export class ViewerProjectFormComponent implements OnInit {
   @Input() model: Project;
   @Input() toUppercase: boolean;
+
   constructor() {}
 
   ngOnInit() {}

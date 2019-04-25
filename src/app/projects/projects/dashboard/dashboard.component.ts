@@ -10,14 +10,15 @@ export class DashboardComponent implements OnInit {
   static SHORT = 3;
 
   @Input() long: boolean;
-  @Input() buttonLabel: string;
-  @Input() dashboardTitle: string;
   @Input() projects: Project[];
+  @Input() showLoader: boolean;
   @Output() buttonClick = new EventEmitter<number>();
 
   max: number;
 
-  constructor() {}
+  constructor() {
+    this.showLoader = false;
+  }
 
   ngOnInit() {
     // Con "long" dashboard mostramos 6 proyectos, si no mostramos 3

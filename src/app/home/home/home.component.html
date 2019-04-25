@@ -1,8 +1,7 @@
-<app-dashboard [projects]="projects.reverse()"
+<app-dashboard [projects]="projects$ | async"
                [long]="false"
-               [buttonLabel]="'Ver proyecto'"
                (buttonClick)="visitProject($event)"
-               dashboardTitle="Últimos proyectos"></app-dashboard>
+               [showLoader]="loading"></app-dashboard>
 
 <div class="text-center"
      *ngIf="numProj == 0">

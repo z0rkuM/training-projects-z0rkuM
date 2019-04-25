@@ -1,5 +1,8 @@
-<app-viewer-project-form [model]="project"
-                         [toUppercase]="true"></app-viewer-project-form>
+<app-show-loader [showLoader]="loading"
+                 text="Cargando proyecto...">
+  <app-viewer-project-form [model]="project$ | async"
+                           [toUppercase]="true"></app-viewer-project-form>
+</app-show-loader>
 
 <a (click)="location.back()"
    class="button"><span class="icon-link"></span> Volver</a>

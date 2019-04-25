@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { EnviromentProjectsService } from './enviroment-projects.service';
+import { SharedModule } from '../shared/shared.module';
+import { HttpProjectsService } from './http-projects.service';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsService } from './projects.service';
 import { DashboardElementComponent } from './projects/dashboard/dashboard-element/dashboard-element.component';
@@ -26,12 +28,13 @@ import { ViewerProjectComponent } from './projects/viewer-project/viewer-project
     ViewerProjectFormComponent,
     NewProjectFormComponent
   ],
-  imports: [CommonModule, ProjectsRoutingModule, FormsModule],
+  imports: [CommonModule, ProjectsRoutingModule, FormsModule, HttpClientModule, SharedModule],
   exports: [DashboardComponent],
   providers: [
     {
       provide: ProjectsService,
-      useClass: EnviromentProjectsService
+      useClass: HttpProjectsService
+      //useClass: EnviromentProjectsService
     }
   ]
 })

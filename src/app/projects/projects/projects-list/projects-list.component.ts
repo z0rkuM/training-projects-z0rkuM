@@ -9,10 +9,12 @@ import { Project } from '../models/project.model';
   templateUrl: './projects-list.component.html'
 })
 export class ProjectsListComponent implements OnInit {
+  constructor() {}
   /**
    * Lista de Project a visualizar.
    */
   @Input() projects: Project[];
+
   /**
    * Emite el Project en el que pinchamos para visualizar.
    */
@@ -21,7 +23,24 @@ export class ProjectsListComponent implements OnInit {
    * Emite el Project en el que pinchamos para borrar.
    */
   @Output() delete = new EventEmitter<Project>();
-  constructor() {}
 
   ngOnInit() {}
+
+  /*
+  ngOnChanges(changes: SimpleChanges): void {
+    this.ngOnInit();
+  }
+
+  ngOnInit() {
+    if (this.projects instanceof Observable) {
+      this.showLoader = true;
+      this.projects.subscribe(result => {
+        this.showLoader = false;
+        this.actualProjects = result;
+      });
+    } else {
+      this.actualProjects = this.projects;
+    }
+  }
+  */
 }

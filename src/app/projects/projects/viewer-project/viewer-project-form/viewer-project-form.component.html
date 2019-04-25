@@ -1,12 +1,12 @@
 <form>
   <fieldset>
-    <legend>{{toUppercase ?  (model.name | uppercase) : model.name}}</legend>
+    <legend>{{toUppercase ?  (model?.name | uppercase) : model?.name}}</legend>
     <div class="row">
       <div class="col-sm-12 col-md-3">
         <b>Identificador</b>
       </div>
       <div class="col-sm-12 col-md-9">
-        {{model.id}}
+        {{model?.id}}
       </div>
     </div>
     <div class="row">
@@ -14,7 +14,7 @@
         <b>Nombre</b>
       </div>
       <div class="col-sm-12 col-md-9">
-        {{model.name}}
+        {{model?.name}}
       </div>
     </div>
   </fieldset>
