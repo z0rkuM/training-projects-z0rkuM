@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EMPTY, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { ProjectsService } from './projects.service';
 import { Project } from './projects/models/project.model';
@@ -8,16 +9,16 @@ import { Project } from './projects/models/project.model';
 export class EnviromentProjectsService implements ProjectsService {
   static INDEX_NOT_FOUND = -1;
   findAll() {
-    return of(environment.projects);
+    return of(environment.projects).pipe(delay(0));
   }
   filter(filter: Project) {
-    return of(environment.projects.filter(this.constructFilter(filter)));
+    return of(environment.projects.filter(this.constructFilter(filter))).pipe(delay(0));
   }
   find(filter: Project) {
-    return of(environment.projects.find(this.constructFilter(filter)));
+    return of(environment.projects.find(this.constructFilter(filter))).pipe(delay(0));
   }
   findById(id: number) {
-    return of(environment.projects.find(p => p.id === id));
+    return of(environment.projects.find(p => p.id === id)).pipe(delay(0));
   }
   add(project: Project) {
     project.id = this.getNextId();

@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../../environments/environment';
 import { SharedModule } from '../shared/shared.module';
+import { EnviromentProjectsService } from './enviroment-projects.service';
 import { HttpProjectsService } from './http-projects.service';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsService } from './projects.service';
@@ -15,6 +17,14 @@ import { ProjectsListComponent } from './projects/projects-list/projects-list.co
 import { ProjectsComponent } from './projects/projects.component';
 import { ViewerProjectFormComponent } from './projects/viewer-project/viewer-project-form/viewer-project-form.component';
 import { ViewerProjectComponent } from './projects/viewer-project/viewer-project.component';
+
+const projectsFactory = (httpClient: HttpClient) => {
+  if (environment.projectsImpl === 'RESTAPI') {
+    return new HttpProjectsService(httpClient);
+  } else {
+    return new EnviromentProjectsService();
+  }
+};
 
 @NgModule({
   declarations: [
@@ -33,7 +43,9 @@ import { ViewerProjectComponent } from './projects/viewer-project/viewer-project
   providers: [
     {
       provide: ProjectsService,
-      useClass: HttpProjectsService
+      useFactory: projectsFactory,
+      deps: [HttpClient]
+      //useClass: HttpProjectsService
       //useClass: EnviromentProjectsService
     }
   ]

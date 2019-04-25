@@ -8,6 +8,7 @@ export const environment = {
     { id: 3, name: 'Clean my room' }
   ],
   enviromentLabel: 'DEV',
+  projectsImpl: 'RESTAPI', //RESTAPI or MEM
   projectsApi: {
     url: 'https://api-base.herokuapp.com/api/pub/projects',
     delay: 500
