@@ -1,30 +1,62 @@
-<table class="striped margin-top"
-       *ngIf="projects?.length > 0; else emptyMsg">
-  <thead>
-    <tr>
-      <th>Identificador</th>
-      <th>Nombre</th>
-      <th>Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of projects">
-      <td data-label="Identificador">{{p.id}}</td>
-      <td data-label="Nombre">{{p.name}}</td>
-      <td data-label="Opciones"
-          class="table-options">
-        <a class="table-option"
+<ng-container *ngIf="projects?.length > 0; else emptyMsg">
+  <table mat-table
+         [dataSource]="projects">
+
+    <ng-container matColumnDef="identificador">
+      <th mat-header-cell
+          *matHeaderCellDef> Identificador </th>
+      <td mat-cell
+          *matCellDef="let p"> {{p.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell
+          *matHeaderCellDef> Nombre </th>
+      <td mat-cell
+          *matCellDef="let p"> {{p.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="esfuerzo">
+      <th mat-header-cell
+          *matHeaderCellDef> Esfuerzo </th>
+      <td mat-cell
+          *matCellDef="let p">{{p.effort}}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="opciones">
+      <th mat-header-cell
+          *matHeaderCellDef> Opciones </th>
+      <td mat-cell
+          *matCellDef="let p"><a class="table-option"
            aria-label="Visualiza este proyecto"
            href="javascript:void(0)"
-           (click)="visit.emit(p)"><i class="fas fa-eye"></i> </a>
+           (click)="visit.emit(p)">
+          <mat-icon>search</mat-icon>
+        </a>
         <a class="table-option"
            aria-label="Borra este proyecto"
            href="javascript:void(0)"
-           (click)="delete.emit(p)"><i class="fas fa-times"></i> </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+           (click)="delete.emit(p)">
+          <mat-icon>delete_forever</mat-icon>
+        </a></td>
+    </ng-container>
+
+    <tr mat-header-row
+        *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+        *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+                 [length]="length"
+                 [pageIndex]="pageIndex"
+                 [pageSize]="pageSize"
+                 [pageSizeOptions]="[3, 5, 10, 15]"
+                 (page)="doPage($event)">
+  </mat-paginator>
+</ng-container>
+
 <ng-template #emptyMsg>
   <p class="text-center">
     La búsqueda no devolvió ningún resultado.

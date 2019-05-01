@@ -1,6 +1,8 @@
-<app-new-project-form [(model)]="project"></app-new-project-form>
+<!--<app-new-project-form [(model)]="project"></app-new-project-form>-->
+<app-new-mat-project-form [(model)]="project"
+                          (save)="addProject()"></app-new-mat-project-form>
 
-<a (click)="location.back()"
+<!--<a (click)="location.back()"
    class="button"><span class="icon-link"></span> Volver</a>
 <a (click)="addProject()"
-   class="button primary"><span class="fas fa-calendar-plus"></span> Guardar</a>
+   class="button primary"><span class="fas fa-calendar-plus"></span> Guardar</a>-->

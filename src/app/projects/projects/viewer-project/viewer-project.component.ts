@@ -1,4 +1,3 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -16,7 +15,7 @@ export class ViewerProjectComponent implements OnInit {
   project$: Observable<Project>;
   loading: boolean;
 
-  constructor(private activateRoute: ActivatedRoute, public location: Location, private projectsService: ProjectsService) {
+  constructor(private activateRoute: ActivatedRoute, private projectsService: ProjectsService) {
     this.projectId = +activateRoute.snapshot.params['id'];
     this.loading = true;
   }

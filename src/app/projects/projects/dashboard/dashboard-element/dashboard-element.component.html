@@ -1,25 +1,28 @@
-<div class="card fluid">
-  <div class="section dark">
-    <h5>{{project.name | uppercase}}</h5>
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <b>Id.</b>
-      </div>
-      <div class="col-sm-12 col-md-8">
-        {{project.id}}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <b>Nombre</b>
-      </div>
-      <div class="col-sm-12 col-md-8">
-        {{project.name}}
-      </div>
-    </div>
-    <div class="row">
-      <a (click)="buttonClick.emit(project.id)"
-         class="button primary">{{buttonLabel}}</a>
-    </div>
-  </div>
-</div>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      {{project.name | uppercase}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>Identificador</dt>
+      <dd>{{project.id}}</dd>
+    </dl>
+    <dl>
+      <dt>Nombre</dt>
+      <dd>{{project.name}}</dd>
+    </dl>
+    <dl>
+      <dt>Esfuerzo</dt>
+      <dd>{{project.effort}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button
+            color="primary"
+            (click)="buttonClick.emit(project.id)"
+            type="submit">
+      <mat-icon>search</mat-icon> {{buttonLabel}}
+    </button>
+  </mat-card-actions>
+</mat-card>

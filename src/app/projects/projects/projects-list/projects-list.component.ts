@@ -5,6 +5,7 @@ import { Project } from '../models/project.model';
  * Presentador de la lista de proyectos encontrados.
  */
 @Component({
+  styleUrls: ['./projects-list.component.css'],
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html'
 })
@@ -14,6 +15,10 @@ export class ProjectsListComponent implements OnInit {
    * Lista de Project a visualizar.
    */
   @Input() projects: Project[];
+  @Input() pageIndex: number;
+  @Input() pageSize: number;
+  @Input() length: number;
+  displayedColumns: string[] = ['identificador', 'nombre', 'esfuerzo', 'opciones'];
 
   /**
    * Emite el Project en el que pinchamos para visualizar.
@@ -24,23 +29,14 @@ export class ProjectsListComponent implements OnInit {
    */
   @Output() delete = new EventEmitter<Project>();
 
+  /**
+   * Emite un evento para indicar el cambio de página
+   */
+  @Output() page = new EventEmitter<any>();
+
   ngOnInit() {}
 
-  /*
-  ngOnChanges(changes: SimpleChanges): void {
-    this.ngOnInit();
+  doPage(changePage: any) {
+    this.page.emit(changePage);
   }
-
-  ngOnInit() {
-    if (this.projects instanceof Observable) {
-      this.showLoader = true;
-      this.projects.subscribe(result => {
-        this.showLoader = false;
-        this.actualProjects = result;
-      });
-    } else {
-      this.actualProjects = this.projects;
-    }
-  }
-  */
 }

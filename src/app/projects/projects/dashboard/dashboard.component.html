@@ -1,28 +1,28 @@
-<h4>Últimos proyectos</h4>
+<h3>Últimos proyectos</h3>
 
 <app-show-loader [showLoader]="showLoader"
                  text="Cargando últimos proyectos...">
   <ng-container *ngIf="projects?.length > 0; else zeroProj">
-    <div class="row">
+    <mat-grid-list cols="3"
+                   gutterSize="15px"
+                   style="height: 250px"
+                   rowHeight="fit">
       <ng-container *ngFor="let p of projects; index as i">
-        <div class="col-sm-12 col-md-4"
-             *ngIf="i < max">
+        <mat-grid-tile *ngIf="i < max">
           <app-dashboard-element buttonLabel="Ver proyecto"
                                  (buttonClick)="buttonClick.emit($event)"
                                  [project]="p"></app-dashboard-element>
-        </div>
+        </mat-grid-tile>
       </ng-container>
-    </div>
+    </mat-grid-list>
 
-    <div class="row">
-      <div class="col-sm-12 text-right">
-        <p>
-          Se muestran <mark class="tag primary">{{min(projects?.length, max)}}</mark> proyectos (de
-          {{projects?.length}}
-          en
-          total)
-        </p>
-      </div>
+    <div class="row text-right">
+      <p>
+        Se muestran {{min(projects?.length, max)}} proyectos (de
+        {{projects?.length}}
+        en
+        total)
+      </p>
     </div>
   </ng-container>
 

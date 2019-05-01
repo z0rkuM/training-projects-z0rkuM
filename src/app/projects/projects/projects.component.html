@@ -1,15 +1,25 @@
-<h4>Listado de proyectos</h4>
-<app-filter-projects-form [(model)]="filter"
-                          (search)="search($event)"></app-filter-projects-form>
+<h3>Listado de proyectos</h3>
+
+<app-filter-mat-projects-form [(model)]="filter"
+                              (search)="search($event, null)"></app-filter-mat-projects-form>
+
+<br />
 
 <app-show-loader [showLoader]="loading"
                  text="Buscando proyectos...">
   <app-projects-list [projects]="projects$ | async"
                      (visit)="visitProject($event.id)"
-                     (delete)="deleteProject($event.id)"></app-projects-list>
+                     (delete)="deleteProject($event.id)"
+                     (page)="search(true, $event)"
+                     [pageIndex]="changePage == null ? 0 : changePage.pageIndex"
+                     [pageSize]="changePage == null ? defaultPageSize : changePage.pageSize"
+                     [length]="length"></app-projects-list>
 </app-show-loader>
 
-<div [ngClass]="{'text-center': (projects$ | async)?.length == 0}">
-  <button routerLink="new"
-          class="primary"><span class="fas fa-calendar-plus"></span> Nuevo proyecto</button>
-</div>
+<br />
+
+<button mat-raised-button
+        routerLink="new"
+        color="primary">
+  <mat-icon>create_new_folder</mat-icon> Nuevo proyecto
+</button>

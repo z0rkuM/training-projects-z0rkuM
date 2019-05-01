@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Project } from '../models/project.model';
 
 @Component({
+  styleUrls: ['./dashboard.component.css'],
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html'
 })
