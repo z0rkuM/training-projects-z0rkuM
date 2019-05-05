@@ -75,9 +75,9 @@ export class ProjectsComponent implements OnInit {
 
     this.projects$ = this.projectsService.filter(this.filter).pipe(
       share(),
-      tap(arr => (this.length = arr.length)),
+      tap(arr => (this.length = arr == null ? 0 : arr.length)),
       map(arr => {
-        return arr.slice(nSkip, nSkip + nTake);
+        return arr == null ? null : arr.slice(nSkip, nSkip + nTake);
       }),
       finalize(() => (this.loading = false))
     );

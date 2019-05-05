@@ -5,6 +5,9 @@
 
 <div class="text-center"
      *ngIf="numProj == 0">
-  <button routerLink="/projects/new"
-          class="shadowed"><span class="fas fa-calendar-plus"></span> Crear mi proyecto</button>
+  <button mat-raised-button
+          routerLink="/projects/new"
+          color="primary">
+    <mat-icon>create_new_folder</mat-icon> Crear mi proyecto
+  </button>
 </div>

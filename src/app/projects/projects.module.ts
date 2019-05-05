@@ -15,6 +15,7 @@ import {
   MatTableModule
 } from '@angular/material';
 import { environment } from '../../environments/environment';
+import { AuditModule } from '../audit/audit.module';
 import { SharedModule } from '../shared/shared.module';
 import { EnviromentProjectsService } from './enviroment-projects.service';
 import { HttpProjectsService } from './http-projects.service';
@@ -70,7 +71,8 @@ const projectsFactory = (httpClient: HttpClient) => {
     MatIconModule,
     MatTableModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    AuditModule
   ],
   exports: [DashboardComponent],
   providers: [
@@ -78,8 +80,6 @@ const projectsFactory = (httpClient: HttpClient) => {
       provide: ProjectsService,
       useFactory: projectsFactory,
       deps: [HttpClient]
-      //useClass: HttpProjectsService
-      //useClass: EnviromentProjectsService
     }
   ]
 })
